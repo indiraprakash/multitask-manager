@@ -1,0 +1,22 @@
+{
+  "rules": {
+    ".read": true,
+    ".write": false,
+    "multitaskManagerData" : {
+      ".indexOn": ["name"],
+      ".write": true
+    },
+    "multitaskManagerData1" : {
+      ".indexOn": ["name"],
+      "$dataSetName": {
+        ".write": "!data.exists() || newData.child('version').val() == data.child('version').val() + 1"
+      }
+    },
+    "multitaskManagerData2" : {
+      ".indexOn": ["name"],
+      "$dataSetName": {
+        ".write": "!data.exists() || newData.child('version').val() == data.child('version').val() + 1"
+      }
+    }
+  }
+}

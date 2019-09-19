@@ -1,0 +1,29 @@
+{
+  "hosting": {
+    "public": "dist",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ],
+    "rewrites": [
+      {
+        "source": "**",
+        "destination": "/index.html"
+      }
+    ],
+    "headers": [
+      {
+        "source" : "mmServiceWorker.js",
+        "headers" : [{
+          "key" : "Cache-Control",
+          "value" : "no-cache"
+        }]
+      }
+    ]
+  },
+  "database": {
+    "rules": "firebasedb.rules.json"
+  }
+
+}
